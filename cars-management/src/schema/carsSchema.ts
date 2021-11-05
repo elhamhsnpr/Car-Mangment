@@ -1,8 +1,10 @@
 
 import Ajv, { JSONSchemaType } from "ajv";
 
+// create schema for validation
 
 
+//create a interface representing
 export interface CarsData {
   brand: string;
   color: string;
@@ -12,6 +14,7 @@ export interface CarsData {
   mileAge: number;
 }
 
+// create Json schema
 const schema: JSONSchemaType<CarsData> = {
   type: "object",
   properties: {
@@ -27,8 +30,10 @@ const schema: JSONSchemaType<CarsData> = {
   additionalProperties: false
 }
 
-// validate is a type guard for MyData - type is inferred from schema type
+
 const ajvInstance = new Ajv({ allErrors: true });
+
+//create validator according to schema 
 const validate = ajvInstance.compile(schema)
 
 export { validate}

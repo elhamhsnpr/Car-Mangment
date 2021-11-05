@@ -10,7 +10,8 @@ const app = (0, express_1.default)();
 app.use(express_1.default.urlencoded({ extended: true }));
 app.use(express_1.default.json());
 app.use(cars_1.carRouter);
-mongoose_1.default.connect('mongodb://localhost:27017/carsManagement').then(() => {
+// connect to mongoDB by using mongoose
+mongoose_1.default.connect('mongodb://mongodb:27017/carsManagement').then(() => {
     console.log("Connected to the database!");
 })
     .catch((err) => {

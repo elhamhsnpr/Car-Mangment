@@ -6,7 +6,7 @@ import { Car, CarInput } from "../models/cars"
 // Create new car
 
 const createCar = async (req: Request, res: Response) => {
-    
+
     const { brand, color, model, year, fuelType, mileAge } = req.body;
 
     const carInput: CarInput = {

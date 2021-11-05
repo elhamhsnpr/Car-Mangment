@@ -1,7 +1,7 @@
 import { Request, Response } from "express";
 import { Car} from "../models/cars"
 
-//Delete an individual car by using id
+// Delete an individual car by using id
 
 const deleteCar = async (req: Request, res: Response) => {
     const { id } = req.params;

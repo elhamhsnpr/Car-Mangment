@@ -1,7 +1,9 @@
 import mongoose, { Schema, Model, Document } from 'mongoose';
 
+// create the schema for car
 
 
+// create a type representing a document in DB
 type CarDocument = Document & {
     brand: string;
     color: string;
@@ -11,6 +13,8 @@ type CarDocument = Document & {
     mileAge: number;
 }
 
+
+//create a Input representing according to type representing 
 type CarInput = {
     brand: CarDocument['brand'];
     color: CarDocument['color'];
@@ -21,7 +25,7 @@ type CarInput = {
 
 }
 
-
+// create  a schema
 const carsSchema: Schema = new Schema({
     brand: {
         type: String,
@@ -51,6 +55,7 @@ const carsSchema: Schema = new Schema({
 
 })
 
+//crete  a model
 const Car: Model<CarDocument> = mongoose.model<CarDocument>('Car', carsSchema);
 
 export { Car, CarDocument, CarInput }

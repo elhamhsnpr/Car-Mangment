@@ -1,7 +1,7 @@
 import { Request, Response } from "express";
 import { Car} from "../models/cars";
 
-//Read the full data of all cars
+// Read the full data of all cars
 const getAllCars = async (req: Request, res: Response) => {
 
   // get the all cars data and sort the according their timestamp
@@ -11,7 +11,7 @@ const getAllCars = async (req: Request, res: Response) => {
 };
 
 
-//Read the full data of an individual car.
+// Read the full data of an individual car.
 
 const getCar = async (req: Request, res: Response) => {
 
