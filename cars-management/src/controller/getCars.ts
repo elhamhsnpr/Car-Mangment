@@ -1,8 +1,10 @@
 import { Request, Response } from "express";
 import { Car} from "../models/cars";
 
-//Read the full data car.s
+//Read the full data of all cars
 const getAllCars = async (req: Request, res: Response) => {
+
+  // get the all cars data and sort the according their timestamp
   const cars = await Car.find().sort('-createdAt').exec();
 
   return res.status(200).json({ data: cars });
@@ -15,6 +17,7 @@ const getCar = async (req: Request, res: Response) => {
 
   const { id } = req.params;
 
+  // get the car data according to car id
   const car = await Car.findOne({ _id: id });
 
   if (!car) {
